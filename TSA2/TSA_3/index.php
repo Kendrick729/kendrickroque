@@ -10,7 +10,7 @@
 
 <div class="resume-container">
 
-    <!-- LEFT SIDEBAR -->
+    <!-- LEFT -->
     <div class="header-section">
         <div class="profile-pic-box">
             <img src="profile.jpg" alt="Profile">
@@ -19,46 +19,83 @@
         <?php require 'personal.php'; ?>
     </div>
 
-    <!-- RIGHT CONTENT -->
+    <!-- RIGHT -->
     <div class="content-area">
 
         <!-- Career Objective -->
         <div class="section-box full">
-            <h2>Career Objective</h2>
-            <?php include 'objective.php'; ?>
+            <button class="accordion">Career Objective</button>
+            <div class="panel">
+                <?php include 'objective.php'; ?>
+            </div>
         </div>
 
         <!-- Education -->
         <div class="section-box full">
-            <h2>Educational Attainment</h2>
-            <?php include 'education.php'; ?>
+            <button class="accordion">Educational Attainment</button>
+            <div class="panel">
+                <?php include 'education.php'; ?>
+            </div>
         </div>
 
-        <!-- Skills + Affiliation (SIDE BY SIDE ONLY HERE) -->
+        <!-- Skills + Affiliation -->
         <div class="grid-2">
 
             <div class="section-box">
-                <h2>Skills</h2>
-                <?php include 'skills.php'; ?>
+                <button class="accordion">Skills</button>
+                <div class="panel">
+                    <?php include 'skills.php'; ?>
+                </div>
             </div>
 
             <div class="section-box">
-                <h2>Affiliation</h2>
-                <?php include 'affiliation.php'; ?>
+                <button class="accordion">Affiliation</button>
+                <div class="panel">
+                    <?php include 'affiliation.php'; ?>
+                </div>
             </div>
 
         </div>
 
-        <!-- Work Experience -->
+        <!-- Work -->
         <div class="section-box full">
-            <h2>Work Experience</h2>
-            <?php include 'experience.php'; ?>
+            <button class="accordion">Work Experience</button>
+            <div class="panel">
+                <?php include 'experience.php'; ?>
+            </div>
         </div>
 
     </div>
 
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const acc = document.querySelectorAll(".accordion");
+
+    acc.forEach(button => {
+        button.addEventListener("click", function () {
+
+            const panel = this.nextElementSibling;
+
+            document.querySelectorAll(".panel").forEach(p => {
+                if (p !== panel) {
+                    p.style.maxHeight = null;
+                }
+            });
+
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+
+        });
+    });
+
+});
+</script>
+
 </body>
 </html>
-``

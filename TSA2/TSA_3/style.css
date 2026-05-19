@@ -4,7 +4,6 @@ body {
     background: #f3c6cf;
 }
 
-/* MAIN RESUME CARD */
 .resume-container {
     display: flex;
     width: 90%;
@@ -14,7 +13,7 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* LEFT SIDEBAR */
+/* LEFT */
 .header-section {
     width: 35%;
     background: #e85d95;
@@ -22,72 +21,56 @@ body {
     padding: 25px;
 }
 
-/* PROFILE */
 .profile-pic-box img {
     width: 130px;
-    border-radius: 12px;
+    border-radius: 50%;
     margin-bottom: 15px;
 }
 
-/* SIDEBAR TEXT */
-.header-section h1 {
-    margin: 10px 0;
-}
-
-.header-section h3 {
-    border-bottom: 2px solid white;
-    padding-bottom: 5px;
-    margin-top: 20px;
-}
-
-/* RIGHT CONTENT */
+/* RIGHT */
 .content-area {
     width: 65%;
     padding: 30px;
     background: #fafafa;
 }
 
-/* ROWS */
-.row {
-    margin-bottom: 25px;
-}
-
-/* 2-COLUMN GRID */
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-/* SECTION STYLE */
 .section-box {
     background: white;
     padding: 15px;
     border-radius: 8px;
 }
 
-/* FULL WIDTH SECTION */
 .full {
     width: 100%;
 }
 
-/* TITLES */
-.section-box h2 {
+/* ACCORDION */
+.accordion {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
     color: #e85d95;
+    text-align: left;
+    padding: 10px 0;
+    cursor: pointer;
     border-bottom: 2px solid #e85d95;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
 }
 
-/* TEXT STYLE */
-p {
-    line-height: 1.6;
+.accordion::after {
+    content: "▼";
+    float: right;
 }
 
-ul {
-    padding-left: 20px;
-}
-
-.profile-pic-box img {
-    border-radius: 50%;
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
 }
